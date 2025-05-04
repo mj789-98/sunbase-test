@@ -1,0 +1,124 @@
+# Product Requirements Document: Unity Technical Test
+
+## Project Overview
+This Unity project demonstrates core skills in C# programming, API integration, UI design, and game mechanics implementation, targeting Unity version 2022.3.17f1.
+
+## Technical Requirements
+- Unity 2022.3.17f1
+- C# programming language
+- DOTween package (only external asset permitted)
+- Built-in Unity packages only
+
+## Task 1: Client Data Display System
+
+### API Integration
+- Endpoint: https://qa.sunbasedata.com/sunbase/portal/api/assignment.jsp?cmd=client_data
+- Response: JSON data containing client information
+- Data model must include at minimum:
+  * Client name/label
+  * Points value
+  * Manager status (boolean)
+  * Address information
+
+### UI Components
+1. **Client List**
+   - Display client label and points for each entry
+   - Responsive layout that adapts to screen aspect
+   - Selection highlight for currently selected client
+   - Animated transitions between list states
+
+2. **Filter Dropdown**
+   - Options: "All Clients", "Managers Only", "Non-Managers"
+   - Updates list immediately when selection changes
+   - Maintains state between scene changes
+
+3. **Client Details Popup**
+   - Triggered by clicking on a client list item
+   - Displays: Name, Points, Address
+   - Animated entry and exit transitions using DOTween
+   - Close button or click-outside functionality
+
+### Animation Requirements
+- Use DOTween for all transitions
+- Animate list item appearance when populating
+- Smooth transitions for filtering operations
+- Popup window entry/exit animations
+
+### Architecture Requirements
+- Separation of concerns (UI/Data/Logic)
+- SOLID principles adherence
+- Clean interface contracts
+- Dependency injection where appropriate
+
+## Task 2: Circle Interaction Game
+
+### Game Mechanics
+1. **Circle Generation**
+   - Random spawning of 5-10 circles on screen
+   - Circles must be fully visible within screen bounds
+   - Each circle should have consistent visual representation
+
+2. **Line Drawing**
+   - User draws curved line using mouse or touch input
+   - Line should follow cursor/finger position precisely
+   - Visual feedback while drawing
+   - Line drawing ends when mouse/touch input ends
+
+3. **Collision Detection**
+   - When line drawing ends, detect all circles intersected by the line
+   - Remove intersected circles with appropriate visual feedback
+   - Line should be reset after collision detection
+
+4. **Restart Functionality**
+   - Clear button labeled "Restart"
+   - Respawns new random set of 5-10 circles
+   - Resets game state entirely
+
+### UI Requirements
+- Consistent visual style with Task 1
+- Clear visual feedback for interactions
+- Responsive layout for any screen aspect
+
+### Architecture Requirements
+- Modular design separating:
+  * Input handling
+  * Game object management
+  * Collision detection
+  * UI elements
+- SOLID principles adherence
+
+## Evaluation Criteria
+1. **API Integration**
+   - Proper HTTP request handling
+   - Error handling and retry mechanism
+   - Clean data mapping
+
+2. **UI Implementation**
+   - Layout quality and responsiveness
+   - Interaction design
+   - Visual consistency
+
+3. **Animation Quality**
+   - Smoothness and timing
+   - Appropriate use of DOTween
+   - Performance considerations
+
+4. **SOLID Principles**
+   - Single Responsibility Principle
+   - Open/Closed Principle
+   - Liskov Substitution Principle
+   - Interface Segregation Principle
+   - Dependency Inversion Principle
+
+5. **Architecture**
+   - Project organization
+   - Code readability and maintainability
+   - Separation of concerns
+   - Appropriate design patterns
+
+## Project Structure Guidelines
+- Scripts organized by domain and responsibility
+- Clear naming conventions
+- Proper scene hierarchy organization
+- Efficient prefab usage
+- Comprehensive but concise comments 

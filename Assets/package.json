@@ -1,0 +1,13 @@
+{
+  "name": "sunbase-unity-test",
+  "version": "1.0.0",
+  "description": "Sunbase Unity Technical Test",
+  "unity": "2022.3.17f1",
+  "dependencies": {
+    "com.unity.modules.ui": "1.0.0",
+    "com.unity.modules.uielements": "1.0.0",
+    "com.unity.modules.imgui": "1.0.0",
+    "com.unity.modules.physics2d": "1.0.0",
+    "com.demigiant.dotween": "1.2.632"
+  }
+} 
