@@ -100,9 +100,9 @@ namespace SunbaseTest.UI
         public void Show(ClientData client)
         {
             // Update UI with client data
-            if (nameText != null) nameText.text = client.Name ?? client.Label; // Fall back to label if name not available
-            if (pointsText != null) pointsText.text = client.Points.ToString();
-            if (addressText != null) addressText.text = client.Address ?? "No address available";
+            if (nameText != null) nameText.text = "Name: " + (client.Name ?? client.Label); // Fall back to label if name not available
+            if (pointsText != null) pointsText.text = "Points: " + client.Points.ToString();
+            if (addressText != null) addressText.text = "Address: " + (client.Address ?? "No address available");
             if (managerStatusText != null) 
             {
                 managerStatusText.text = client.IsManager ? "Manager" : "Non-Manager";

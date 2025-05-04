@@ -50,8 +50,8 @@ namespace SunbaseTest.UI
         public void Setup(ClientData clientData)
         {
             this.clientData = clientData;
-            labelText.text = clientData.Label;
-            pointsText.text = clientData.Points.ToString();
+            labelText.text = "Label: " + clientData.Label;
+            pointsText.text = "Points: " + clientData.Points.ToString();
             
             // Reset selection state
             SetSelected(false, false);
